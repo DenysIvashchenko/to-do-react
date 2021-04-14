@@ -14,7 +14,7 @@ function App() {
       "id": 2,
       "text": "Learn ReactJs",
       "day": "Feb 6th at 1:30pm",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 3,
@@ -25,12 +25,16 @@ function App() {
   ])
   // delete
   const deleteTask = id => {
-    console.log('del', id)
+    setTasks(tasks.filter(item => item.id !== id))
+  }
+  // remaider
+  const toggleRemainder = id => {
+    setTasks(tasks.map(item => item.id === id ? { ...item, reminder: !item.reminder } : item))
   }
   return (
     <div className="container">
       <Header />
-      <Tasks tasks={tasks} onDelete={deleteTask} />
+      {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleRemainder} />) : ('no tasks')}
     </div>
   );
 }
