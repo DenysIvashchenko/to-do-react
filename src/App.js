@@ -53,7 +53,7 @@ function App() {
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleRemainder} />
       ) : (
-        "no tasks"
+        "No Tasks to Do"
       )}
     </div>
   );
