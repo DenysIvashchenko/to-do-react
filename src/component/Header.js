@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import Button from './Button'
 
 function Header({ title }) {
@@ -10,6 +10,7 @@ function Header({ title }) {
     )
 
 }
+// 40 минута видео
 Header.defaultProps = {
     title: 'Tracker'
 }
